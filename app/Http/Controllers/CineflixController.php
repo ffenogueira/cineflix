@@ -15,6 +15,7 @@ use Exception;
 
 
 
+
 class CineflixController extends Controller
 {
     //
