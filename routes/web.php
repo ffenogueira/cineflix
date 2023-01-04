@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
-
+Route::get('/', 'CineflixController@index');
+Route::get('/home', 'CineflixController@index');
 Route::get('/cadastrar', 'CineflixController@create');
 Route::post('/cadastrar-store', 'CineflixController@store')->name('cineflix.store');

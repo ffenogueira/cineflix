@@ -1,4 +1,4 @@
-<!-- Stored in resources/views/layouts/master.blade.php -->
+<!-- Stored in resources/views/layout/master.blade.php -->
 <html>
 
 <head>
@@ -27,6 +27,7 @@
         
         <!-- Icons -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,11 +36,21 @@
         <title> @yield('title','CINEFLIX') </title>
         <link rel="icon" href="#">
         <style>
+            body{
+            color:white;
+            background-color:rgb(20, 20, 20);
+            
+            }
+            .container-fluid{
+            --bs-gutter-x: 0 rem !important;
+            }
             
             .title-icon{
                 font-family: 'Poppins', sans-serif !important;
             }
-           
+           .card-body{
+            color:black;
+           }
            
         </style>
     </head>
@@ -50,30 +61,24 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="col-2">
-  <a style="color:#b30000; margin-left:80px" class="navbar-brand" href="#">CINEFLIX</a>
+  <a style="color:#b30000; margin-left:80px" class="navbar-brand" href="{{url('home')}}">CINEFLIX</a>
 </div>
   <div class="collapse navbar-collapse col-6" id="navbarTogglerDemo03">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Séries</a>
+        <a class="nav-link" href="http://127.0.0.1:8000/#series">Séries</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Filmes</a>
+        <a class="nav-link" href="http://127.0.0.1:8000/#filmes">Filmes</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link " href="#">Lançamentos</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link " href="#">Meus Favoritos</a>
-      </li>
+      
     </ul>
-    <ul  class="navbar-nav justify-content-end col-8">
+        </div>
+    <div class="col-3" >    
+    <ul  class="navbar-nav">
   <li class="nav-item">
-    <a class="nav-link" href="galeria.php">Galeria</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="/cadastrar">Cadastrar</a>
-  </li>
+        <a class="nav-link" href="{{url('cadastrar')}}">Cadastrar Filme</a>
+      </li>
 </ul>
 </div>
 </nav>
@@ -83,20 +88,15 @@
 
         @show
 
-    <div class="container">
-    @yield('content')
-
+    <div class="container-fluid">
+    @yield('container-fluid')
+           
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="	https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
 
-    <script src="{{ asset('storage/vendors/scripts/core.js') }}"></script>
-    <script src="{{ asset('storage/vendors/scripts/script.min.js') }}"></script>
-    <script src="{{ asset('storage/vendors/scripts/process.js') }}"></script>
-    <script src="{{ asset('storage/vendors/scripts/layout-settings.js') }}"></script>
-    <script src="{{ asset('storage/vendors/scripts/jquery.mask.min.js') }}"></script>
-    <script src="{{ asset('storage/vendors/scripts/sweetalert2.js') }}"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
     <script>
 
@@ -124,4 +124,6 @@
 
 
     </body>
+   
+   
 </html>

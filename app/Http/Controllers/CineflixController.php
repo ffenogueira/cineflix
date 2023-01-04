@@ -38,14 +38,19 @@ class CineflixController extends Controller
 
     }
 
+    public function index(Request $request)
+    {
+        return view('home');
+    }
+
  
     public function create(Request $request)
     {
         try{
 
             $id = $request->id;
-            $AllCategoria= $this->categoria->GetAllCategoria(); 
-            $AllIdioma = $this->idioma->GetAllIdioma();      
+            $allCategoria= $this->categoria->GetAllCategoria(); 
+            $allIdioma = $this->idioma->GetAllIdioma();      
             
         }catch(Exception $e){
 
@@ -56,8 +61,8 @@ class CineflixController extends Controller
         }
 
         return view('cadastrar', [
-            'AllCategoria' => $AllCategoria,
-            'AllIdioma' => $AllIdioma,
+            'allCategoria' => $allCategoria,
+            'allIdioma' => $allIdioma,
         ]);
                
     }

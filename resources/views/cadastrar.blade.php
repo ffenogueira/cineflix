@@ -7,17 +7,8 @@
 @parent 
     <!-- SIDE BAR -->
 @stop
-@section('content')
+@section('container-fluid')
 
-<style type="text/css">
-#cancelar:hover{
-    color:white;
-}
-#cancelar{
-    color:#6c757d;
-    text-decoration:none;
-}
-</style>
 <div class="container">
 <div>
     <p class="h2 mt-5 mb-5 "><span class="material-icons">movie</span><span class="title-icon"> CADASTRAR FILME</span></p>
@@ -47,7 +38,7 @@
                     </div>
                     <div id="coluna" class="col-md-6 col-sm-6 col-xs-12 mb-3">
                         <label  class="form-label">Categoria</label>
-                        <select style="width:100%;" class="select2-class" name="categoria" id="categoria">
+                        <select style="width:100%;" class="select2-class" name="categoria_id" id="categoria_id">
                         
                       
                         </select>
@@ -67,7 +58,7 @@
                     
                     <div id="idioma" class="col-md-6 col-sm-6 col-xs-12 mb-3">
                         <label  class="form-label">Idioma</label>
-                        <select style="width:100%;" class="select2-class" name="idioma" id="idioma">
+                        <select style="width:100%;" class="select2-class" name="idioma_id" id="idioma_id">
                         
                       
                         </select>
@@ -77,24 +68,25 @@
                 
 
                 <div class="row">
-            
+                <div class="col-md-12">
                         <label class="form-label">Descrição</label>
                         <textarea class="form-control" id="descricao" rows="3" name="descricao" placeholder="">{{ @$dados['descricao'] }}</textarea>
                 </div>  
+                </div> 
                 
                 <div class="row">
 
                     <div class="col-4 offset-md-2">
                         <div class="d-grid gap-2 mt-5">
-                                <button type="button" class="btn btn-outline-danger">
-                                    <a id="cancelar" href="/home">Cancelar</a>
-                                </button>
+
+                                    <a class="btn btn-outline-danger" id="cancelar" href="{{url('home')}}">Cancelar</a>
+                                
                         </div>
                     </div>  
 
                     <div class="col-4">
                         <div class="d-grid gap-2 mt-5">
-                                <button  type="submit" class="btn btn-outline-secondary">Cadastrar</button>
+                                <button  type="submit" class="btn btn-outline-success">Cadastrar</button>
                         </div>
                     </div>  
                 </div>
