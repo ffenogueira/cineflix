@@ -11,6 +11,7 @@
 
 
 <body>
+
 <!-- slide section -->
 <!-- Carousel -->
 <div id="demo" style="padding-left: 0 !important;" data-bs-ride="carousel"  >
@@ -40,275 +41,33 @@
   </button>
 </div>
 <!-- end slide section -->
-  
-<!-- card filmes section -->
+
 <section id="filmes" class="pt-5 pb-5">
     <div class="container">
         <div class="row">
             <div class="col-10">
                 <h3 class="mb-3">Filmes</h3>
             </div>
-            <div class="col-2 text-right">
-                <a class="btn btn-outline-danger mb-3 mr-1" href="#carouselExampleIndicators2" role="button" data-slide="prev">
-                    <i class="fa fa-chevron-left"></i>
-                </a>
-                <a class="btn btn-outline-danger mb-3 " href="#carouselExampleIndicators2" role="button" data-slide="next">
-                    <i class="fa fa-chevron-right"></i>
-                </a>
-            </div>
             <div class="col-12">
                 <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
-
+                 
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <div class="row">
-
-                                <div class="col-md-4 mb-3">
+                            @foreach (@$filmes as $f)
+                            <div class="col-md-4 mb-3">
                                     <div class="card">
                                         <img class="img-fluid" alt="100%x280" src="{{ asset('/images/avatar.jpg') }}">
                                         <div class="card-body">
-                                            <h4 class="card-title">Avatar</h4>
-                                            <p class="card-text">No exuberante mundo alienígena de Pandora vivem os Na'vi. </p>
+                                            <h4 class="card-title">{{ @$f['titulo'] }}</h4>
+                                            <p class="card-text">{{ @$f['descricao'] }}</p>
 
                                         </div>
 
                                     </div>
-                                </div>
-                                <div class="col-md-4 mb-3">
-                                    <div class="card">
-                                        <img class="img-fluid" alt="100%x280" src="{{ asset('/images/avatar.jpg') }}">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Avatar</h4>
-                                            <p class="card-text">No exuberante mundo alienígena de Pandora vivem os Na'vi.</p>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 mb-3">
-                                    <div class="card">
-                                        <img class="img-fluid" alt="100%x280" src="{{ asset('/images/avatar.jpg') }}">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Avatar</h4>
-                                            <p class="card-text">No exuberante mundo alienígena de Pandora vivem os Na'vi.</p>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
                         </div>
-                        <div class="carousel-item">
-                            <div class="row">
-
-                                <div class="col-md-4 mb-3">
-                                    <div class="card">
-                                        <img class="img-fluid" alt="100%x280" src="{{ asset('/images/avatar.jpg') }}">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Avatar</h4>
-                                            <p class="card-text">No exuberante mundo alienígena de Pandora vivem os Na'vi.</p>
-
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div class="col-md-4 mb-3">
-                                    <div class="card">
-                                        <img class="img-fluid" alt="100%x280" src="{{ asset('/images/avatar.jpg') }}">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Avatar</h4>
-                                            <p class="card-text">No exuberante mundo alienígena de Pandora vivem os Na'vi.</p>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 mb-3">
-                                    <div class="card">
-                                        <img class="img-fluid" alt="100%x280" src="{{ asset('/images/avatar.jpg') }}">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Avatar</h4>
-                                            <p class="card-text">No exuberante mundo alienígena de Pandora vivem os Na'vi.</p>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="row">
-
-                                <div class="col-md-4 mb-3">
-                                    <div class="card">
-                                        <img class="img-fluid" alt="100%x280" src="{{ asset('/images/avatar.jpg') }}">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Avatar</h4>
-                                            <p class="card-text">No exuberante mundo alienígena de Pandora vivem os Na'vi.</p>
-
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div class="col-md-4 mb-3">
-                                    <div class="card">
-                                        <img class="img-fluid" alt="100%x280" src="{{ asset('/images/avatar.jpg') }}">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Avatar</h4>
-                                            <p class="card-text">No exuberante mundo alienígena de Pandora vivem os Na'vi.</p>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 mb-3">
-                                    <div class="card">
-                                        <img class="img-fluid" alt="100%x280" src="{{ asset('/images/avatar.jpg') }}">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Avatar</h4>
-                                            <p class="card-text">No exuberante mundo alienígena de Pandora vivem os Na'vi.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- end card filmes section -->
-<!-- card section -->
-<section id="series" class="pb-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-10">
-                <h3 class="mb-3">Séries</h3>
-            </div>
-            <div class="col-2 text-right">
-                <a class="btn btn-outline-danger mb-3 mr-1" href="#carouselExampleIndicators2" role="button" data-slide="prev">
-                    <i class="fa fa-chevron-left"></i>
-                </a>
-                <a class="btn btn-outline-danger mb-3 " href="#carouselExampleIndicators2" role="button" data-slide="next">
-                    <i class="fa fa-chevron-right"></i>
-                </a>
-            </div>
-            <div class="col-12">
-                <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
-
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <div class="row">
-
-                                <div class="col-md-4 mb-3">
-                                    <div class="card">
-                                        <img class="img-fluid" alt="100%x280" src="{{ asset('/images/avatar.jpg') }}">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Avatar</h4>
-                                            <p class="card-text">No exuberante mundo alienígena de Pandora vivem os Na'vi.</p>
-
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div class="col-md-4 mb-3">
-                                    <div class="card">
-                                        <img class="img-fluid" alt="100%x280" src="{{ asset('/images/avatar.jpg') }}">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Avatar</h4>
-                                            <p class="card-text">No exuberante mundo alienígena de Pandora vivem os Na'vi.</p>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 mb-3">
-                                    <div class="card">
-                                        <img class="img-fluid" alt="100%x280" src="{{ asset('/images/avatar.jpg') }}">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Avatar</h4>
-                                            <p class="card-text">No exuberante mundo alienígena de Pandora vivem os Na'vi.</p>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="row">
-
-                                <div class="col-md-4 mb-3">
-                                    <div class="card">
-                                        <img class="img-fluid" alt="100%x280" src="{{ asset('/images/avatar.jpg') }}">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Avatar</h4>
-                                            <p class="card-text">No exuberante mundo alienígena de Pandora vivem os Na'vi.</p>
-
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div class="col-md-4 mb-3">
-                                    <div class="card">
-                                        <img class="img-fluid" alt="100%x280" src="{{ asset('/images/avatar.jpg') }}">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Avatar</h4>
-                                            <p class="card-text">No exuberante mundo alienígena de Pandora vivem os Na'vi.</p>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 mb-3">
-                                    <div class="card">
-                                        <img class="img-fluid" alt="100%x280" src="{{ asset('/images/avatar.jpg') }}">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Avatar</h4>
-                                            <p class="card-text">No exuberante mundo alienígena de Pandora vivem os Na'vi.</p>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="row">
-
-                                <div class="col-md-4 mb-3">
-                                    <div class="card">
-                                        <img class="img-fluid" alt="100%x280" src="{{ asset('/images/avatar.jpg') }}">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Avatar</h4>
-                                            <p class="card-text">No exuberante mundo alienígena de Pandora vivem os Na'vi.</p>
-
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div class="col-md-4 mb-3">
-                                    <div class="card">
-                                        <img class="img-fluid" alt="100%x280" src="{{ asset('/images/avatar.jpg') }}">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Avatar</h4>
-                                            <p class="card-text">No exuberante mundo alienígena de Pandora vivem os Na'vi.</p>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 mb-3">
-                                    <div class="card">
-                                        <img class="img-fluid" alt="100%x280" src="{{ asset('/images/avatar.jpg') }}">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Avatar</h4>
-                                            <p class="card-text">No exuberante mundo alienígena de Pandora vivem os Na'vi.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+                        @endforeach
+                    
 </section>
 </body>
 

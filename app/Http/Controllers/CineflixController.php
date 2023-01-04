@@ -42,7 +42,10 @@ class CineflixController extends Controller
 
     public function index(Request $request)
     {
-        return view('home');
+        $filmes = Filme::get()->toArray();
+        return view('home', [
+            'filmes' => $filmes
+        ]);
     }
 
 
@@ -72,26 +75,25 @@ class CineflixController extends Controller
     }
 
     public function store(Request $request)
-    {    
-        //dd($request->all());  
-        $this->cineflixCollection->setAll($request->all());
-        //dd($this->movimentacaoCollection);
+    {    $filme = new Filme;
+        $filme->titulo = $request->titulo;
+        $filme->categoria_id = $request->categoria_id;
+        $filme->descricao = $request->descricao;
+        $filme->duracao = $request->duracao;
+        $filme->avaliacao = $request->avaliacao;
+        $filme->idioma_id = $request->idioma_id;
+        $filme->save();
+        $filmes = Filme::get()->toArray();
         
-            $response = $this->cineflix->save($this->cineflixCollection->toArray());
-           // dd($response);
-        
-
-        
-        $cineflix = $this->cineflix->find(null);
-       
-
-
-
-        return view('cadastrar', [
-            'cineflix' => $cineflix
-
+        $response = response()->json([ "message" => "O filme foi cadastrado com sucesso !"
+        ], 201);
+        return view('home', [
+            'response' => $response,
+            'filmes' => $filmes
         ]);
-    }
+       
+      }
+    
 
 
     

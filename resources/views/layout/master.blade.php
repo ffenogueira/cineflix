@@ -65,12 +65,7 @@
 </div>
   <div class="collapse navbar-collapse col-6" id="navbarTogglerDemo03">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-      <li class="nav-item active">
-        <a class="nav-link" href="http://127.0.0.1:8000/#series">Séries</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="http://127.0.0.1:8000/#filmes">Filmes</a>
-      </li>
+      
       
     </ul>
         </div>
