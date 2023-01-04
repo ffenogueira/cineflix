@@ -46,7 +46,7 @@ class CineflixCollection {
         return $this->categoria_id;
     }
 
-    public function setDescriacao($descricao = null){
+    public function setDescricao($descricao = null){
         $this->descricao = $descricao;
     }
 

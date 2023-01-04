@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Filme;
+use App\Categoria;
+use App\Idioma;
 use Illuminate\Http\Request;
 use App\Repositories\CineflixService;
 use App\Repositories\CategoriaService;
@@ -43,14 +45,15 @@ class CineflixController extends Controller
         return view('home');
     }
 
- 
+
     public function create(Request $request)
     {
         try{
 
             $id = $request->id;
-            $allCategoria= $this->categoria->GetAllCategoria(); 
-            $allIdioma = $this->idioma->GetAllIdioma();      
+            $allCategoria = Categoria::get()->toArray();
+            //$allCategoria= $this->categoria->find(); 
+            $allIdioma = Idioma::get()->toArray();      
             
         }catch(Exception $e){
 
@@ -61,10 +64,33 @@ class CineflixController extends Controller
         }
 
         return view('cadastrar', [
+            'id' => $id,
             'allCategoria' => $allCategoria,
             'allIdioma' => $allIdioma,
         ]);
                
+    }
+
+    public function store(Request $request)
+    {    
+        //dd($request->all());  
+        $this->cineflixCollection->setAll($request->all());
+        //dd($this->movimentacaoCollection);
+        
+            $response = $this->cineflix->save($this->cineflixCollection->toArray());
+           // dd($response);
+        
+
+        
+        $cineflix = $this->cineflix->find(null);
+       
+
+
+
+        return view('cadastrar', [
+            'cineflix' => $cineflix
+
+        ]);
     }
 
 

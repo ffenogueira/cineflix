@@ -5,16 +5,16 @@ namespace App\Repositories;
 class CineflixService {
 
     protected $path;
-   // protected $guzzle;
+    protected $guzzle;
 
     public function __construct(){
 
-        $this->path = env('API_URL','http://localhost:8000/').'api/filmes';
-       // $this->guzzle = new GuzzleService;
+        $this->path = env('API_URL','http://127.0.0.1:8000').'/api/filmes';
+        $this->guzzle = new GuzzleService;
     }
 
     public function save($data = array()){
-        $url = $this->path."/create";
+        $url = $this->path;
         return $this->post($url,$data);    
     }
 

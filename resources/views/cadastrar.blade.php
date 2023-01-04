@@ -28,7 +28,6 @@
   <form  method="post" action="{{ route('cineflix.store') }}" name="form-cadastro">   
             @csrf
             @method('POST') 
-
            <!-- <input type="hidden" name="id" value="{{ @$cineflix['id'] }}"> -->
             
            <div class="row">
@@ -39,7 +38,11 @@
                     <div id="coluna" class="col-md-6 col-sm-6 col-xs-12 mb-3">
                         <label  class="form-label">Categoria</label>
                         <select style="width:100%;" class="select2-class" name="categoria_id" id="categoria_id">
-                        
+                        <option value=""> </option>
+                        @foreach (@$allCategoria as $categoria) 
+                                        <option value="{{ @$categoria['categoria_id'] }}">{{ @$categoria['nome'] }}</option>
+                                    @endforeach
+                                   
                       
                         </select>
                     </div>  
@@ -59,7 +62,10 @@
                     <div id="idioma" class="col-md-6 col-sm-6 col-xs-12 mb-3">
                         <label  class="form-label">Idioma</label>
                         <select style="width:100%;" class="select2-class" name="idioma_id" id="idioma_id">
-                        
+                        <option value=""></option>
+                        @foreach (@$allIdioma as $idioma) 
+                                        <option value="{{ @$idioma['idioma_id'] }}">{{ @$idioma['nome'] }}</option>
+                                    @endforeach
                       
                         </select>
                     </div>   
