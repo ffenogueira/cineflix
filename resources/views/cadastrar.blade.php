@@ -25,7 +25,7 @@
 
     <!--- form cadastro -->
 
-  <form  method="post" action="{{ route('cineflix.store') }}" name="form-cadastro">   
+  <form  method="post" action="{{ route('create.filme') }}" name="form-cadastro">   
             @csrf
             @method('POST') 
            <!-- <input type="hidden" name="id" value="{{ @$cineflix['id'] }}"> -->

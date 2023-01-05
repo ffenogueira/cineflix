@@ -19,7 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('filmes', 'ApiController@getAllFilmes');
 Route::get('filmes/{id}', 'ApiController@getFilme');
-Route::post('filmes', 'ApiController@createFilme');
+Route::post('filmes', 'ApiController@createFilme')->name('cineflix.store');
 Route::put('filmes/{id}', 'ApiController@updateFilme');
 Route::delete('filmes/delete/{id}','ApiController@deleteFilme');
 Route::put('filmes/favorite/{id}', 'ApiController@favoriteFilme');

@@ -9,13 +9,13 @@ class CineflixService {
 
     public function __construct(){
 
-        $this->path = env('API_URL','http://127.0.0.1:8000').'/api/filmes';
+        $this->path = env('API_URL','http://127.0.0.1:8000').'/filmes';
         $this->guzzle = new GuzzleService;
     }
 
     public function save($data = array()){
         $url = $this->path;
-        return $this->post($url,$data);    
+        return $this->guzzle->post($url,$data);   
     }
 
     public function find($data = array()){

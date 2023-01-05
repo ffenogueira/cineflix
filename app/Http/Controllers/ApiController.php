@@ -9,8 +9,10 @@ use App\Categoria;
 class ApiController extends Controller
 {
     public function getAllFilmes() {
-        $filmes = Filme::get()->toJson(JSON_PRETTY_PRINT);
-        return response($filmes, 200);
+        $filmes = Filme::get()->toArray();
+        return view('home', [
+            'filmes' => $filmes
+        ]);
       }
   
       public function createFilme(Request $request) {
@@ -23,9 +25,10 @@ class ApiController extends Controller
         $filme->idioma_id = $request->idioma_id;
         $filme->save();
         
-        return response()->json([
-            "message" => "O filme foi cadastrado com sucesso !"
-        ], 201);
+        $filmes = Filme::get()->toArray();
+        return view('home', [
+          'filmes' => $filmes
+      ]); 
       }
       
   

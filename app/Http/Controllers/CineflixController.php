@@ -75,7 +75,7 @@ class CineflixController extends Controller
     }
 
     public function store(Request $request)
-    {    $filme = new Filme;
+    {  /*  $filme = new Filme;
         $filme->titulo = $request->titulo;
         $filme->categoria_id = $request->categoria_id;
         $filme->descricao = $request->descricao;
@@ -90,7 +90,19 @@ class CineflixController extends Controller
         return view('home', [
             'response' => $response,
             'filmes' => $filmes
-        ]);
+        ]); */
+
+         $this->cineflixCollection->setAll($request->all());
+       
+            $response = $this->cineflix->save($this->cineflixCollection->toArray());
+
+            $filmes = Filme::get()->toArray();
+        
+
+        return view('home', [
+            'response' => $response
+           // 'filmes' => $filmes
+        ]); 
        
       }
     
